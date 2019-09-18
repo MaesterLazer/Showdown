@@ -84,12 +84,10 @@ void AShowdownCharacter::OnResetVR()
 
 void AShowdownCharacter::TouchStarted(ETouchIndex::Type FingerIndex, FVector Location)
 {
-		Jump();
 }
 
 void AShowdownCharacter::TouchStopped(ETouchIndex::Type FingerIndex, FVector Location)
 {
-		StopJumping();
 }
 
 void AShowdownCharacter::TurnAtRate(float Rate)
