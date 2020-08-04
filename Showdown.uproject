@@ -18,6 +18,10 @@
 		{
 			"Name": "RemoteSession",
 			"Enabled": true
+		},
+		{
+			"Name": "NoesisGUI",
+			"Enabled": true
 		}
 	]
 }
