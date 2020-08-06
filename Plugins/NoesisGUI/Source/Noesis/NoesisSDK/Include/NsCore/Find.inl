@@ -29,6 +29,20 @@
     extern "C" __declspec(dllimport) int __stdcall FindNextFileW(_In_ void* hFindFile, _Out_ LPWIN32_FIND_DATAW lpFindFileData);
     extern "C" __declspec(dllimport) int __stdcall FindClose(_Inout_ void* hFindFile);
 
+// <ps4>
+#elif defined(NS_PLATFORM_PS4)
+    #include <kernel.h>
+    #include <sceerror.h>
+
+    struct Dir
+    {
+        int fd;
+        int blk_size;
+        char *buf;
+        int bytes;
+        int pos;
+    };
+// </ps4>
 #else
     #include <sys/stat.h>
     #include <dirent.h>
@@ -87,6 +101,40 @@ inline bool FindFirst(const char* directory, const char* extension, FindData& fi
 
     return false;
 
+// <ps4>
+#elif defined(NS_PLATFORM_PS4)
+    SceKernelMode mode = SCE_KERNEL_S_IRU | SCE_KERNEL_S_IFDIR;
+    int fd = sceKernelOpen(directory, SCE_KERNEL_O_RDONLY | SCE_KERNEL_O_DIRECTORY, mode);
+    if (fd >= 0)
+    {
+        SceKernelStat sb = {0};
+        int status = sceKernelFstat(fd, &sb);
+        NS_ASSERT(status == SCE_OK);
+
+        Dir* dir = (Dir*)Alloc(sizeof(Dir));
+        dir->fd = fd;
+        dir->blk_size = sb.st_blksize;
+        dir->buf = (char*)Alloc(sb.st_blksize);
+        dir->bytes = 0;
+        dir->pos = 0;
+
+        StrCopy(findData.extension, sizeof(findData.extension), extension);
+        findData.handle = dir;
+
+        if (FindNext(findData))
+        {
+            return true;
+        }
+        else
+        {
+            FindClose(findData);
+            return false;
+        }
+    }
+
+    return false;
+// </ps4>
+
 #else
     DIR* dir = opendir(directory);
 
@@ -127,6 +175,43 @@ inline bool FindNext(FindData& findData)
 
     return false;
 
+// <ps4>
+#elif defined(NS_PLATFORM_PS4)
+    Dir* dir  = (Dir*)findData.handle;
+
+    while (true)
+    {
+        if (dir->bytes == 0)
+        {
+            dir->pos = 0;
+            dir->bytes = sceKernelGetdents(dir->fd, dir->buf, dir->blk_size);
+            if (dir->bytes == 0)
+            {
+                return false;
+            }
+        }
+
+        while (dir->pos < dir->bytes)
+        {
+            SceKernelDirent *dirent = (SceKernelDirent *)&(dir->buf[dir->pos]);
+            dir->pos += dirent->d_reclen;
+
+            if (dirent->d_fileno != 0)
+            {
+                if (StrCaseEndsWith(dirent->d_name, findData.extension))
+                {
+                    StrCopy(findData.filename, sizeof(findData.filename), dirent->d_name);
+                    return true;
+                }
+            }
+        }
+
+        dir->bytes = 0;
+    }
+
+    return false;
+// </ps4>
+
 #else
     DIR* dir = (DIR*)findData.handle;
 
@@ -156,6 +241,15 @@ inline void FindClose(FindData& findData)
 #if defined(NS_PLATFORM_WINDOWS)
     int r = ::FindClose(findData.handle);
     NS_ASSERT(r != 0);
+
+// <ps4>
+#elif defined(NS_PLATFORM_PS4)
+    Dir* dir  = (Dir*)findData.handle;
+    int error = sceKernelClose(dir->fd);
+    NS_ASSERT(error == SCE_OK);
+    Dealloc(dir->buf);
+    Dealloc(dir);
+// </ps4>
 
 #else
     DIR* dir = (DIR*)findData.handle;
