@@ -1,0 +1,128 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Showdown (Debug)",
+			"request": "launch",
+			"preLaunchTask": "Showdown Win64 Debug Build",
+			"program": "G:\\Showdown\\Binaries\\Win64\\UE4-Win64-Debug.exe",
+			"args": [
+			],
+			"cwd": "E:\\UE_4.25",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "E:\\UE_4.25\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "Showdown (DebugGame)",
+			"request": "launch",
+			"preLaunchTask": "Showdown Win64 DebugGame Build",
+			"program": "G:\\Showdown\\Binaries\\Win64\\UE4-Win64-DebugGame.exe",
+			"args": [
+			],
+			"cwd": "E:\\UE_4.25",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "E:\\UE_4.25\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "Showdown (Development)",
+			"request": "launch",
+			"preLaunchTask": "Showdown Win64 Development Build",
+			"program": "G:\\Showdown\\Binaries\\Win64\\UE4.exe",
+			"args": [
+			],
+			"cwd": "E:\\UE_4.25",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "E:\\UE_4.25\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "Showdown (Shipping)",
+			"request": "launch",
+			"preLaunchTask": "Showdown Win64 Shipping Build",
+			"program": "G:\\Showdown\\Binaries\\Win64\\UE4-Win64-Shipping.exe",
+			"args": [
+			],
+			"cwd": "E:\\UE_4.25",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "E:\\UE_4.25\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "Showdown (Test)",
+			"request": "launch",
+			"preLaunchTask": "Showdown Win64 Test Build",
+			"program": "G:\\Showdown\\Binaries\\Win64\\UE4-Win64-Test.exe",
+			"args": [
+			],
+			"cwd": "E:\\UE_4.25",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "E:\\UE_4.25\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "ShowdownEditor (Debug)",
+			"request": "launch",
+			"preLaunchTask": "ShowdownEditor Win64 Debug Build",
+			"program": "E:\\UE_4.25\\Engine\\Binaries\\Win64\\UE4Editor-Win64-Debug.exe",
+			"args": [
+				"G:\\Showdown\\Showdown.uproject"
+			],
+			"cwd": "E:\\UE_4.25",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "E:\\UE_4.25\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "ShowdownEditor (DebugGame)",
+			"request": "launch",
+			"preLaunchTask": "ShowdownEditor Win64 DebugGame Build",
+			"program": "E:\\UE_4.25\\Engine\\Binaries\\Win64\\UE4Editor-Win64-DebugGame.exe",
+			"args": [
+				"G:\\Showdown\\Showdown.uproject"
+			],
+			"cwd": "E:\\UE_4.25",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "E:\\UE_4.25\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "ShowdownEditor (Development)",
+			"request": "launch",
+			"preLaunchTask": "ShowdownEditor Win64 Development Build",
+			"program": "E:\\UE_4.25\\Engine\\Binaries\\Win64\\UE4Editor.exe",
+			"args": [
+				"G:\\Showdown\\Showdown.uproject"
+			],
+			"cwd": "E:\\UE_4.25",
+			"stopAtEntry": false,
+			"externalConsole": true,
+			"type": "cppvsdbg",
+			"visualizerFile": "E:\\UE_4.25\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis"
+		},
+		{
+			"name": "Generate Project Files",
+			"type": "clr",
+			"request": "launch",
+			"program": "E:\\UE_4.25\\Engine\\Binaries\\DotNET\\UnrealBuildTool.exe",
+			"console": "externalTerminal",
+			"args": [
+				"-projectfiles",
+				"-vscode",
+				"-project=\"G:\\Showdown\\Showdown.uproject\"",
+				"-game",
+				"-engine"
+			],
+			"internalConsoleOptions": "openOnSessionStart",
+			"cwd": "E:\\UE_4.25"
+		}
+	]
+}

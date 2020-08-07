@@ -1,0 +1,12 @@
+{
+	"files.exclude": {
+		"G:/Showdown/.git": true,
+		"G:/Showdown/.vs": true,
+		"G:/Showdown/.vscode": true,
+		"G:/Showdown/Content": true,
+		"G:/Showdown/DerivedDataCache": true,
+		"G:/Showdown/Intermediate": true,
+		"G:/Showdown/Saved": true,
+		"G:/Showdown/Plugins/NoesisGUI/Shaders": true
+	}
+}
