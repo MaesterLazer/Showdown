@@ -5,7 +5,7 @@
 			"name": "Showdown (Debug)",
 			"request": "launch",
 			"preLaunchTask": "Showdown Win64 Debug Build",
-			"program": "G:\\Showdown\\Binaries\\Win64\\UE4-Win64-Debug.exe",
+			"program": "G:\\Showdown\\UE4 Project\\Binaries\\Win64\\UE4-Win64-Debug.exe",
 			"args": [
 			],
 			"cwd": "E:\\UE_4.25",
@@ -18,7 +18,7 @@
 			"name": "Showdown (DebugGame)",
 			"request": "launch",
 			"preLaunchTask": "Showdown Win64 DebugGame Build",
-			"program": "G:\\Showdown\\Binaries\\Win64\\UE4-Win64-DebugGame.exe",
+			"program": "G:\\Showdown\\UE4 Project\\Binaries\\Win64\\UE4-Win64-DebugGame.exe",
 			"args": [
 			],
 			"cwd": "E:\\UE_4.25",
@@ -31,7 +31,7 @@
 			"name": "Showdown (Development)",
 			"request": "launch",
 			"preLaunchTask": "Showdown Win64 Development Build",
-			"program": "G:\\Showdown\\Binaries\\Win64\\UE4.exe",
+			"program": "G:\\Showdown\\UE4 Project\\Binaries\\Win64\\UE4.exe",
 			"args": [
 			],
 			"cwd": "E:\\UE_4.25",
@@ -44,7 +44,7 @@
 			"name": "Showdown (Shipping)",
 			"request": "launch",
 			"preLaunchTask": "Showdown Win64 Shipping Build",
-			"program": "G:\\Showdown\\Binaries\\Win64\\UE4-Win64-Shipping.exe",
+			"program": "G:\\Showdown\\UE4 Project\\Binaries\\Win64\\UE4-Win64-Shipping.exe",
 			"args": [
 			],
 			"cwd": "E:\\UE_4.25",
@@ -57,7 +57,7 @@
 			"name": "Showdown (Test)",
 			"request": "launch",
 			"preLaunchTask": "Showdown Win64 Test Build",
-			"program": "G:\\Showdown\\Binaries\\Win64\\UE4-Win64-Test.exe",
+			"program": "G:\\Showdown\\UE4 Project\\Binaries\\Win64\\UE4-Win64-Test.exe",
 			"args": [
 			],
 			"cwd": "E:\\UE_4.25",
@@ -72,7 +72,7 @@
 			"preLaunchTask": "ShowdownEditor Win64 Debug Build",
 			"program": "E:\\UE_4.25\\Engine\\Binaries\\Win64\\UE4Editor-Win64-Debug.exe",
 			"args": [
-				"G:\\Showdown\\Showdown.uproject"
+				"G:\\Showdown\\UE4 Project\\Showdown.uproject"
 			],
 			"cwd": "E:\\UE_4.25",
 			"stopAtEntry": false,
@@ -86,7 +86,7 @@
 			"preLaunchTask": "ShowdownEditor Win64 DebugGame Build",
 			"program": "E:\\UE_4.25\\Engine\\Binaries\\Win64\\UE4Editor-Win64-DebugGame.exe",
 			"args": [
-				"G:\\Showdown\\Showdown.uproject"
+				"G:\\Showdown\\UE4 Project\\Showdown.uproject"
 			],
 			"cwd": "E:\\UE_4.25",
 			"stopAtEntry": false,
@@ -100,7 +100,7 @@
 			"preLaunchTask": "ShowdownEditor Win64 Development Build",
 			"program": "E:\\UE_4.25\\Engine\\Binaries\\Win64\\UE4Editor.exe",
 			"args": [
-				"G:\\Showdown\\Showdown.uproject"
+				"G:\\Showdown\\UE4 Project\\Showdown.uproject"
 			],
 			"cwd": "E:\\UE_4.25",
 			"stopAtEntry": false,
@@ -117,7 +117,7 @@
 			"args": [
 				"-projectfiles",
 				"-vscode",
-				"-project=\"G:\\Showdown\\Showdown.uproject\"",
+				"-project=\"G:\\Showdown\\UE4 Project\\Showdown.uproject\"",
 				"-game",
 				"-engine"
 			],
