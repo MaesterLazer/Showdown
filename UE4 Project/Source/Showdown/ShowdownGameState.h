@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/GameStateBase.h"
 #include "ShowdownInterface.h"
+#include "ShowdownGameMode.h"
 #include "ShowdownGameState.generated.h"
 
 
@@ -55,42 +56,72 @@ class SHOWDOWN_API AShowdownGameState : public AGameStateBase, public IShowdownI
 		void EndGameClock(bool timedOut);
 
 	public:
+
+		/**
+		 *  BeginPlay override
+		 */
+		UFUNCTION(BlueprintCallable)
+			virtual void BeginPlay() override;
+
+		/**
+		 *  Pointer for Showdown GameMode
+		 */
+		UPROPERTY(BlueprintReadOnly, Category = "Showdown | GameplayElements")
+			AShowdownGameMode * GameMode;
+
 		/**
 		 *  Pointer for game objects
 		 */
-		UPROPERTY(BlueprintReadOnly, Category = "Showdown|GameplayElements")
+		UPROPERTY(BlueprintReadOnly, Category = "Showdown | GameplayElements")
 			FGameplayObjects gameObjects;
 
 		/**
 		 *  Timer object for Shot Clock
 		 */
-		UPROPERTY(BlueprintReadWrite, Category = "Showdown|Clocks")
+		UPROPERTY(BlueprintReadWrite, Category = "Showdown | Clocks")
 			FTimerHandle shotClockTimerHandle;
+
 		/**
 		 * Current count for the shot clock
 		 */
-		int showClockCount;
+		UPROPERTY(BlueprintReadOnly, Category = "Showdown | Clocks")
+			float shotClockCount;
 
 		/**
 		 *  Timer object for Game Clock
 		 */
-		UPROPERTY(BlueprintReadWrite, Category = "Showdown|Clocks")
+		UPROPERTY(BlueprintReadWrite, Category = "Showdown | Clocks")
 			FTimerHandle gameClockTimerHandle;
+
 		/**
 		 * Current count for the shot clock
 		 */
-		int gameClockCount;
+		UPROPERTY(BlueprintReadOnly, Category = "Showdown | Clocks")
+			float gameClockCount;
+
+		/**
+		 * Current score count for the home player
+		 */
+		UPROPERTY(BlueprintReadOnly, Category = "Showdown | State")
+			uint8 scoreHome;
+
+		/**
+		 * Current score count for the home player
+		 */
+		UPROPERTY(BlueprintReadOnly, Category = "Showdown | State")
+			uint8 scoreAway;
 
 		/**
 		* Call this function **first** on Begin Play to set references to gameplay objects
 		*
 		* @param newGameObjects new set of game object refs
 		*/
-		UFUNCTION(BlueprintCallable, Category = "Showdown|Helpers")
+		UFUNCTION(BlueprintCallable, Category = "Showdown | Helpers")
 			void RegisterGameObjects(FGameplayObjects newGameObjects);
 
 
 // #region SHOWDOWN INTERFACE
+
 		/**
 		* EventScore fires when a shot is made.
 		*
@@ -98,7 +129,6 @@ class SHOWDOWN_API AShowdownGameState : public AGameStateBase, public IShowdownI
 		UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 			void EventScore();
 			virtual void EventScore_Implementation();
-
 
 		/**
 		* EventShotAttempt fires when a shot at the basket is attempted.
@@ -108,7 +138,6 @@ class SHOWDOWN_API AShowdownGameState : public AGameStateBase, public IShowdownI
 			void EventShotAttempt();
 			virtual void EventShotAttempt_Implementation();
 
-
 		/**
 		* EventShotAttempt fires when a shot at the basket is attempted.
 		*
@@ -117,6 +146,37 @@ class SHOWDOWN_API AShowdownGameState : public AGameStateBase, public IShowdownI
 			void EventBallStateChange(E_BallState NewState);
 			virtual void EventBallStateChange_Implementation(E_BallState NewState);
 
+		/**
+		* EventOnShotClockEnd fires when the shock clock times out
+		*
+		*/
+		UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+			void EventOnShotClockEnd();
+			virtual void EventOnShotClockEnd_Implementation();
+		
+		/**
+		* EventOnGameClockEnd fires when the game clock times out
+		*
+		*/
+		UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+			void EventOnGameClockEnd();
+			virtual void EventOnGameClockEnd_Implementation();
+
+		/**
+		* EventOnShotClockStart fires when the shock clock starts
+		*
+		*/
+		UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+			void EventOnShotClockStart();
+			virtual void EventOnShotClockStart_Implementation();
+
+		/**
+		* EventOnGameClockStart fires when the game clock starts
+		*
+		*/
+		UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+			void EventOnGameClockStart();
+			virtual void EventOnGameClockStart_Implementation();
 
 // #endregion SHOWDOWN INTERFACE
 };

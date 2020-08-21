@@ -23,6 +23,14 @@ public:
 		* @return Returns game version
 		*/
 		UFUNCTION(BlueprintPure, Category = "ShowdownGameMode | Misc")
-		static FString GetGameVersion(UPARAM(DisplayName = "Get Short Version") bool bShortString);
+			static FString GetGameVersion(UPARAM(DisplayName = "Get Short Version") bool bShortString);
+
+		UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "ShowdownGameMode | Time")
+			float gameTimeLimit;
+
+		UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "ShowdownGameMode | Time" )
+			float shotClockTimeLimit;
+
+
 
 };

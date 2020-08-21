@@ -54,4 +54,31 @@ public:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Showdown Interface")
 		void EventShotAttempt();
 
+	/**
+	* EventOnShotClockEnd fires when the shock clock times out
+	*
+	*/
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Showdown Interface")
+		void EventOnShotClockEnd();
+
+	/**
+	* EventOnGameClockEnd fires when the game clock times out
+	*
+	*/
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Showdown Interface")
+		void EventOnGameClockEnd();
+
+	/**
+	* EventOnShotClockStart fires when the shock clock starts
+	*
+	*/
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Showdown Interface")
+		void EventOnShotClockStart();
+
+	/**
+	* EventOnGameClockStart fires when the game clock starts
+	*
+	*/
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Showdown Interface")
+		void EventOnGameClockStart();
 };
