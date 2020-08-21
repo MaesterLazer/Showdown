@@ -55,6 +55,13 @@ public:
 		void EventShotAttempt();
 
 	/**
+	* EventShotAttempt fires when a player attempts to steal the ball.
+	*
+	*/
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Showdown Interface")
+		void EventStealAttempt();
+
+	/**
 	* EventOnShotClockEnd fires when the shock clock times out
 	*
 	*/

@@ -6,6 +6,17 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "ShowdownBPFL.generated.h"
 
+/**
+*	Enum to codify Gameplay Event
+*/
+UENUM(BlueprintType)
+enum class E_GameplayEvent : uint8 {
+	Score,              // 0
+	ShotClockTimeOut,	// 1
+	GameClockTimeOut,   // 2
+	OutOfBounds,        // 3
+	StealRecovery,      // 4
+};
 
 /**
 *	Enum to codify Player States

@@ -36,7 +36,7 @@ void AShowdownGameState::AdvanceShotClock() {
 	//decrement the timer and update the display
 	--shotClockCount;
 
-	UE_LOG(CUSTOM_GameState, Warning, TEXT("advance shot clock value to %f"), shotClockCount);
+	//UE_LOG(CUSTOM_GameState, Warning, TEXT("advance shot clock value to %f"), shotClockCount);
 
 	//if the timer is done clear and complete the timer with the flag set
 	if (shotClockCount <= 0){
@@ -77,7 +77,7 @@ void AShowdownGameState::AdvanceGameClock() {
 	//decrement the timer and update the display
 	--gameClockCount;
 
-	UE_LOG(CUSTOM_GameState, Warning, TEXT("advance game clock value to %f"), gameClockCount);
+	//UE_LOG(CUSTOM_GameState, Warning, TEXT("advance game clock value to %f"), gameClockCount);
 
 
 	//if the timer is done clear and complete the timer with the flag set
