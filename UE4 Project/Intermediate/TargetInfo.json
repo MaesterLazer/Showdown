@@ -1,0 +1,9 @@
+{
+	"Targets": [
+		{
+			"Name": "Showdown",
+			"Path": "/Users/simon.norman/Documents/Swarm/Showdown/UE4 Project/Source/Showdown.Target.cs",
+			"Type": "Game"
+		}
+	]
+}

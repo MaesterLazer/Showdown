@@ -1,0 +1,12 @@
+{
+	"SourceFiles": [
+		"/Users/simon.norman/Documents/Swarm/Showdown/UE4 Project/Source/Showdown/Showdown.Build.cs",
+		"/Users/simon.norman/Documents/Swarm/Showdown/UE4 Project/Plugins/KantanDocGen/Source/KantanDocGen/KantanDocGen.Build.cs",
+		"/Users/simon.norman/Documents/Swarm/Showdown/UE4 Project/Plugins/NoesisGUI/Source/NoesisEditor/NoesisEditor.Build.cs",
+		"/Users/simon.norman/Documents/Swarm/Showdown/UE4 Project/Plugins/NoesisGUI/Source/NoesisRuntime/NoesisRuntime.Build.cs",
+		"/Users/simon.norman/Documents/Swarm/Showdown/UE4 Project/Plugins/NoesisGUI/Source/Noesis/Noesis.Build.cs",
+		"/Users/simon.norman/Documents/Swarm/Showdown/UE4 Project/Source/Showdown.Target.cs",
+		"/Users/simon.norman/Documents/Swarm/Showdown/UE4 Project/Source/ShowdownEditor.Target.cs"
+	],
+	"EngineVersion": "4.25.3"
+}
