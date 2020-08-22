@@ -88,4 +88,13 @@ public:
 	*/
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Showdown Interface")
 		void EventOnGameClockStart();
+
+	/**
+	* EventOnRegisterGameObjects fires when the gamestate gets the gameplay refs
+	*
+	*/
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Showdown Interface")
+		void EventOnRegisterGameObjects(FGameplayObjects newGameObjects);
+
+
 };

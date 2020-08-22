@@ -178,5 +178,13 @@ class SHOWDOWN_API AShowdownGameState : public AGameStateBase, public IShowdownI
 			void EventOnGameClockStart();
 			virtual void EventOnGameClockStart_Implementation();
 
+		/**
+		* EventOnRegisterGameObjects fires when the gamestate gets the gameplay refs
+		*
+		*/
+		UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+			void EventOnRegisterGameObjects(FGameplayObjects newGameObjects);
+			virtual void EventOnRegisterGameObjects_Implementation(FGameplayObjects newGameObjects);
+
 // #endregion SHOWDOWN INTERFACE
 };

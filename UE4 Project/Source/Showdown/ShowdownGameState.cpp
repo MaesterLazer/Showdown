@@ -103,6 +103,8 @@ void AShowdownGameState::RegisterGameObjects(FGameplayObjects newGameObjects){
 	this->gameObjects = newGameObjects;
 
 	UE_LOG(CUSTOM_GameState, Warning, TEXT("gameplay refs set to GameState"));
+	EventOnRegisterGameObjects(newGameObjects);
+
 	return;
 }
 
@@ -138,5 +140,9 @@ void AShowdownGameState::EventOnGameClockStart_Implementation() {
 void AShowdownGameState::EventOnShotClockStart_Implementation() {
 	StartShotClock();
 	UE_LOG(CUSTOM_GameState, Warning, TEXT("shot clock start fire"));
+	return;
+}
+
+void AShowdownGameState::EventOnRegisterGameObjects_Implementation(FGameplayObjects newGameObjects) {
 	return;
 }
