@@ -13,6 +13,7 @@ public class ShowdownEditorTarget : TargetRules{
             // List of possible project paths based on developer machines. Any developers will need to add project paths to list array
             string[] projectPaths = new string[]{
             "G:/Showdown/UE4 Project/", //Simon Norman
+            "D:/Showdown/UE4 Project/", //Simon Norman
             };
 
             // Text to replace in Version header file
