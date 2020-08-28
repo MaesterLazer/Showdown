@@ -13,6 +13,7 @@
         </LinearGradientBrush>
     </UserControl.Background>
     <Grid>
-            
+        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75"/>
+
     </Grid>
 </UserControl>
