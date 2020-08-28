@@ -21,7 +21,7 @@
 		},
 		{
 			"Name": "NoesisGUI",
-			"Enabled": true
+			"Enabled": false
 		},
 		{
 			"Name": "KantanDocGen",
