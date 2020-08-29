@@ -1,0 +1,36 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "4.25",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "Showdown",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine",
+				"AIModule"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "RemoteSession",
+			"Enabled": true
+		},
+		{
+			"Name": "NoesisGUI",
+			"Enabled": false
+		},
+		{
+			"Name": "KantanDocGen",
+			"Enabled": true
+		},
+		{
+			"Name": "HTMLMenuMain",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/17ba193d00e249ca9ec7cfaf52602a76"
+		}
+	]
+}
