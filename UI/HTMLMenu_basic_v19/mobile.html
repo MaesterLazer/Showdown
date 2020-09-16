@@ -13,6 +13,11 @@
 <script src="js/HTMLMenuUE4Connector.js"></script>
 </head>
 <body style="margin:0; padding:0">
+    <div class="row" id="message-center">
+        <span>
+            <a>TEST TEXT</a>
+        </span>
+    </div>
     <div class="row">
         <div id="pos-rec">
         </div>
@@ -110,7 +115,19 @@
     </script>
    
     <style>
-        html, body {margin: 0; height: 100%; overflow: hidden; background-color: transparent;}
+        @font-face {
+            font-family: 'Poppins Black';
+            src: local('Poppins Black'),
+                url("./fonts/poppins.black.ttf") format("truetype");
+        }
+        
+        @font-face {
+            font-family: 'Poppins Semi-Bold';
+            src: local('Poppins Semi-Bold'),
+                url("./fonts/poppins.semibold.ttf") format("truetype");
+        }
+        
+        html, body {margin: 0; height: 100%; overflow: hidden; background-color: transparent; font-family: 'Poppins Semi-Bold', Arial, Helvetica, sans-serif;}
 
         .showdown-button{
             background-color: rgb(192, 192, 192);
@@ -142,6 +159,15 @@
             margin: 2rem 1rem;
             justify-content: space-between;
             width: 100%;
+        }
+
+        #message-center {
+            position: absolute;
+            left: 42vw;
+            top: 10vh;
+            font-size: 2em;
+            z-index: 1;
+            color: goldenrod;
         }
 
         .show-pos {
