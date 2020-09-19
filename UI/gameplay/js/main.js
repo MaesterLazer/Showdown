@@ -35,8 +35,6 @@
     var mcSteal= new Hammer(stealButton);
 
     mcSteal.on("tap", function(ev) {
-        bindings.message = "test";
-        console.log('bind ', gameplay.message);
         onSteal();
         console.log('stealButton ', ev.type);
     });
