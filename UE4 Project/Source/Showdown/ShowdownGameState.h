@@ -103,13 +103,19 @@ class SHOWDOWN_API AShowdownGameState : public AGameStateBase, public IShowdownI
 		 * Current score count for the home player
 		 */
 		UPROPERTY(BlueprintReadOnly, Category = "Showdown | State")
-			uint8 scoreHome;
+			int32 scoreHome;
 
 		/**
-		 * Current score count for the home player
+		 * Current score count for the away player
 		 */
 		UPROPERTY(BlueprintReadOnly, Category = "Showdown | State")
-			uint8 scoreAway;
+			int32 scoreAway;
+
+		/**
+		 * Current possession state
+		 */
+		UPROPERTY(BlueprintReadOnly, Category = "Showdown | State")
+			E_CurrentPossession possession;
 
 		/**
 		* Call this function **first** on Begin Play to set references to gameplay objects
@@ -118,6 +124,22 @@ class SHOWDOWN_API AShowdownGameState : public AGameStateBase, public IShowdownI
 		*/
 		UFUNCTION(BlueprintCallable, Category = "Showdown | Helpers")
 			void RegisterGameObjects(FGameplayObjects newGameObjects);
+
+		/**
+		* Call this function to update ball possession
+		*
+		* @param newPossessionState
+		*/
+		UFUNCTION(BlueprintCallable, Category = "Showdown | Helpers")
+			void UpdateBallPossession(E_CurrentPossession newPossessionState);
+
+		/**
+		* Call this function to update the score
+		*
+		* @param newPossessionState
+		*/
+		UFUNCTION(BlueprintCallable, Category = "Showdown | Helpers")
+			void UpdateScore();
 
 
 // #region SHOWDOWN INTERFACE

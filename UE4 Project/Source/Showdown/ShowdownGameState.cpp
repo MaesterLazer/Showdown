@@ -9,6 +9,9 @@ DEFINE_LOG_CATEGORY(CUSTOM_GameState);
 
 void AShowdownGameState::BeginPlay() {
 	GameMode = (AShowdownGameMode *)GetWorld()->GetAuthGameMode();
+	possession = E_CurrentPossession::Home;
+	scoreAway = 0;
+	scoreHome = 0;
 
 	if (GameMode != nullptr) {
 		UE_LOG(CUSTOM_GameState, Warning, TEXT("gamemode ref set via C++"));
@@ -98,12 +101,31 @@ void AShowdownGameState::EndGameClock(bool timedOut) {
 
 }
 
+void AShowdownGameState::UpdateScore() {
+	UE_LOG(CUSTOM_GameState, Warning, TEXT("score update call"));
+
+	if (possession == E_CurrentPossession::Away) {
+		this->scoreAway = this->scoreAway + 1;
+	}
+	else if (possession == E_CurrentPossession::Home) {
+		this->scoreHome = this->scoreHome + 1;
+	}
+
+	return;
+}
+
 
 void AShowdownGameState::RegisterGameObjects(FGameplayObjects newGameObjects){
 	this->gameObjects = newGameObjects;
 
 	UE_LOG(CUSTOM_GameState, Warning, TEXT("gameplay refs set to GameState"));
 	EventOnRegisterGameObjects(newGameObjects);
+
+	return;
+}
+
+void AShowdownGameState::UpdateBallPossession(E_CurrentPossession newPossessionState) {
+	this->possession = newPossessionState;
 
 	return;
 }
