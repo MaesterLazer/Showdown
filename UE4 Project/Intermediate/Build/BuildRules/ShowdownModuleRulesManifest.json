@@ -1,10 +1,12 @@
 {
 	"SourceFiles": [
-		"/Users/simon.norman/Documents/Swarm/Showdown/UE4 Project/Source/Showdown/Showdown.Build.cs",
-		"/Users/simon.norman/Documents/Swarm/Showdown/UE4 Project/Plugins/HTMLMenuMain/Source/HTMLMenuMain/HTMLMenuMain.Build.cs",
-		"/Users/simon.norman/Documents/Swarm/Showdown/UE4 Project/Plugins/KantanDocGen/Source/KantanDocGen/KantanDocGen.Build.cs",
-		"/Users/simon.norman/Documents/Swarm/Showdown/UE4 Project/Source/Showdown.Target.cs",
-		"/Users/simon.norman/Documents/Swarm/Showdown/UE4 Project/Source/ShowdownEditor.Target.cs"
+		"G:\\Showdown\\UE4 Project\\Source\\Showdown\\Showdown.Build.cs",
+		"G:\\Showdown\\UE4 Project\\Plugins\\HTMLMenuMain\\Source\\HTMLMenuMain\\HTMLMenuMain.Build.cs",
+		"G:\\Showdown\\UE4 Project\\Plugins\\KantanDocGen\\Source\\KantanDocGen\\KantanDocGen.Build.cs",
+		"G:\\Showdown\\UE4 Project\\Plugins\\LowEntryExtStdLib\\Source\\LowEntryExtendedStandardLibrary\\LowEntryExtendedStandardLibrary.Build.cs",
+		"G:\\Showdown\\UE4 Project\\Plugins\\LowEntryExtStdLib\\Source\\LowEntryExtendedStandardLibraryEditor\\LowEntryExtendedStandardLibraryEditor.Build.cs",
+		"G:\\Showdown\\UE4 Project\\Source\\Showdown.Target.cs",
+		"G:\\Showdown\\UE4 Project\\Source\\ShowdownEditor.Target.cs"
 	],
 	"EngineVersion": "4.25.3"
 }
