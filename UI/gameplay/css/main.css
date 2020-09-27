@@ -76,7 +76,7 @@ html, body {margin: 0; height: 100%; overflow: hidden; background-color: transpa
     position: absolute;
     height: auto;
     z-index: 2;
-    left: 82vw;
+    left: 72vw;
     top: 0;
     width: 18vw;
 }
@@ -84,13 +84,13 @@ html, body {margin: 0; height: 100%; overflow: hidden; background-color: transpa
 .score-label {
     z-index: 3;
     top: 1vh;
-    left: 83vw;
+    left: 73vw;
     font-size: 1.5rem;
     position: absolute;
 }
 
 .score-value {
-    left: 96vw;
+    left: 86vw;
 }
 
 #away-score, #away-label {

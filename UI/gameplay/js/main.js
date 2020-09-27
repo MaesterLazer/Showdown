@@ -18,6 +18,81 @@
     var blockButton = document.getElementById('block-button');
     var posPan = document.getElementById('pos-rec');
 
+    // var joystick = nipplejs.create({
+    //     zone: document.getElementById('static'),
+    //     mode: 'static',
+    //     position: {left: '25%', top: '50%'},
+    //     color: 'red',
+    //     size: 600,
+    //     shape: 'square'
+    // });
+
+    // let moving = {
+    //     center: true,
+    //     up: false,
+    //     down: false,
+    // }
+
+    // joystick.on('start end', function(evt, data) {
+    //     // dump(evt.type);
+    //     //console.log('event ::',evt.type);
+    //     if(evt.type === 'end'){
+    //         moving = {
+    //             center: true,
+    //             up: false, 
+    //             down: false
+    //         }
+    //     }
+    //   }).on('move', function(evt, data) {
+    //     // console.log('move event ::',data);
+    //     if(data.distance <= 75 && moving){
+    //         moving = {
+    //             center: true, 
+    //             up: false,
+    //             down: false
+    //         }
+    //     }
+    //   }).on('plain:up  plain:down',
+    //   function(evt, data) {
+    //       console.log('data ', evt.type)
+    //     if(evt.type === 'plain:up'){
+    //         moving = {
+    //             center: false,
+    //             up: true,
+    //             down: false,
+    //         };
+    //     }
+    //     else if (evt.type === 'plain:down'){
+    //         moving = {
+    //             center: false,
+    //             up: false,
+    //             down: true,
+    //         };
+    //     }
+    //   }
+    //        ).on('pressure', function(evt, data) {
+    //     // debug({
+    //     //   pressure: data
+    //     // });
+    //   });
+    
+    
+    // setInterval(function(){ 
+    //     // console.log('movement state ', moving);
+    //     if(moving.center === true){
+    //         console.log('event type center');
+    //         triggerUE4EventMap('moveEvent', `dir:center`);
+    //     }
+    //     else if(moving.up === true){
+    //         console.log('event type up');
+    //         triggerUE4EventMap('moveEvent', `dir:up`);
+    //     }
+    //     else if(moving.down === true){
+    //         console.log('event type down');
+    //         triggerUE4EventMap('moveEvent', `dir:down`);
+    //     }
+    // }, 50);
+
     // We create a manager object, which is the same as Hammer(), but without the presetted recognizers. 
     var mcShoot = new Hammer(shootButton);
 
@@ -67,19 +142,19 @@
     }
 
     function onShootStart() {
-        triggerUE4EventMap('shootStartEvent', 'ItemID:12', 'Hitpoints:98',);
+        triggerUE4EventMap('shootStartEvent');
     }
 
     function onShootEnd() {
-        triggerUE4EventMap('shootEndEvent', 'ItemID:12', 'Hitpoints:98',);
+        triggerUE4EventMap('shootEndEvent');
     }
 
     function onSteal() {
-        triggerUE4EventMap('stealEvent', 'ItemID:12', 'Hitpoints:98',);
+        triggerUE4EventMap('stealEvent');
     }
     
     function onBlock() {
-        triggerUE4EventMap('blockEvent', 'ItemID:12', 'Hitpoints:98',);
+        triggerUE4EventMap('blockEvent');
     }
 
 //#endregion UI CONTROLS
