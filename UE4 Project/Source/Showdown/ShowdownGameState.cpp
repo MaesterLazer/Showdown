@@ -9,7 +9,7 @@ DEFINE_LOG_CATEGORY(CUSTOM_GameState);
 
 void AShowdownGameState::BeginPlay() {
 	GameMode = (AShowdownGameMode *)GetWorld()->GetAuthGameMode();
-	possession = E_CurrentPossession::Home;
+	possession = E_CurrentPossession::None;
 	scoreAway = 0;
 	scoreHome = 0;
 
