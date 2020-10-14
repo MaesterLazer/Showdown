@@ -65,11 +65,11 @@ html, body {margin: 0; height: 100%; overflow: hidden; background-color: transpa
     text-align: center;
 }
 
-#pos-rec {
-    height: 100vh;
-    max-width: 50vw;
-    min-width: 50vw;
-    background: transparent;
+#joyDiv {
+    position: absolute;
+    top: 50vh;
+    left: 7vw;
+    opacity: 0.25;
 }
 
 #scoreboard-svg {
@@ -104,7 +104,7 @@ html, body {margin: 0; height: 100%; overflow: hidden; background-color: transpa
 #button-grid {
     align-items: center;
     justify-content: center;
-    margin: 55vh 0 0 20vw;
+    margin: 55vh 0 0 68vw;
 }
 
 #block-button {

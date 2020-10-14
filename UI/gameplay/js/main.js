@@ -18,7 +18,11 @@
     var stealButton = document.getElementById('steal-button');
     var blockButton = document.getElementById('block-button');
 
-    var Joy1 = new JoyStick('joyDiv');
+    var Joy1 = new JoyStick('joyDiv',{
+        internalFillColor: '#18181c',
+        internalStrokeColor: '#18181c',
+        externalStrokeColor: '#18181c'
+    });
 
     setInterval(function(){ 
         
