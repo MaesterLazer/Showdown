@@ -69,7 +69,7 @@ html, body {margin: 0; height: 100%; overflow: hidden; background-color: transpa
     position: absolute;
     top: 50vh;
     left: 7vw;
-    opacity: 0.25;
+    opacity: 0.15;
 }
 
 #scoreboard-svg {
