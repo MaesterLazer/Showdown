@@ -4,14 +4,9 @@
 <head>
 <!-- disable zoom on touchscreens-->
 <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> -->
-<link href="css/disableSelection.css" rel="stylesheet">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/flexboxgrid.min.css" rel="stylesheet">
-<link href="fontawesome/css/all.min.css" rel="stylesheet">
 <script src="js/jquery.js"></script>
 <script src="js/jquery-bindings.min.js"></script>
 <script src="js/hammer.js"></script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/nipplejs/0.7.3/nipplejs.min.js" integrity="sha512-Zf1+SWzdLXEY7XLnvgmmZCytW2rUu/l7hI/qsTkS2U5P51M6kbPU/IeKDu5IEGv/nx5REOomTicvDG3qRMYWSw==" crossorigin="anonymous"></script> -->
 <script src="js/HTMLMenuUE4Connector.js"></script>
 <div id="scoreboard" style="margin:0; padding:0">
     <span class="score-label text-white" id="home-label"><p>Home</p></span>
@@ -25,14 +20,14 @@
         <path d="M1019 252H736.785L568 504H1019V252Z" fill="#F4F5F7" stroke="#F4F5F7"/>
     </svg>    
 </div>
-</head> 
+</head>
+
 <body style="margin:0; padding:0">
-    <div class="row"> 
-        <div id="pos-rec">
+    <div class="row">
+        <div id="joyDiv" style="width:200px;height:200px;margin-bottom:20px;"></div>
             <div class="row" id="message-center">
                 <span><p data-bind="message"></p></span>
             </div>
-        </div>
         <div id="button-grid" class="flex-column">
             <div id="block-button" class="showdown-button">
                 <span style="font-size: 2.5em; color: white">
@@ -55,8 +50,12 @@
     </div>
 </body>
 <footer>
-    <link href="css/main.css" rel="stylesheet">
     <script src="js/joy.js"></script>
     <script src="js/main.js"></script>
+    <link href="css/disableSelection.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/flexboxgrid.min.css" rel="stylesheet">
+    <link href="fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 </footer>
 </html>
