@@ -69,7 +69,6 @@ html, body {margin: 0; height: 100%; overflow: hidden; background-color: transpa
     position: absolute;
     top: 50vh;
     left: 7vw;
-    opacity: 0.15;
 }
 
 #scoreboard-svg {
@@ -119,8 +118,9 @@ html, body {margin: 0; height: 100%; overflow: hidden; background-color: transpa
 
 #message-center {
     position: absolute;
-    left: 42vw;
-    top: 10vh;
+    left: 35vw;
+    top: 17vh;
+    text-align: center;
     font-size: 2em;
     z-index: 1;
     color: goldenrod;

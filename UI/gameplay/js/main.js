@@ -19,9 +19,9 @@
     var blockButton = document.getElementById('block-button');
 
     var Joy1 = new JoyStick('joyDiv',{
-        internalFillColor: '#18181c',
-        internalStrokeColor: '#18181c',
-        externalStrokeColor: '#18181c'
+        internalFillColor: 'rgba(24,24,28,0.15)',
+        internalStrokeColor: 'rgba(24,24,28,0.15)',
+        externalStrokeColor: 'rgba(24,24,28,0.15)'
     });
 
     setInterval(function(){ 
