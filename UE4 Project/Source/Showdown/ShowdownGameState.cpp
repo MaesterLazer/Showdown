@@ -126,7 +126,6 @@ void AShowdownGameState::RegisterGameObjects(FGameplayObjects newGameObjects){
 
 void AShowdownGameState::UpdateBallPossession(E_CurrentPossession newPossessionState) {
 	this->possession = newPossessionState;
-	this->EventBallStateChange(E_BallState::Possessed);
 	return;
 }
 
