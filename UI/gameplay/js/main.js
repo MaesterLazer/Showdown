@@ -74,11 +74,11 @@
     }
 
     function onSteal() {
-        triggerUE4EventMap('stealEvent');
+        triggerUE4EventBlank('stealEvent');
     }
     
     function onBlock() {
-        triggerUE4EventMap('blockEvent');
+        triggerUE4EventBlank('blockEvent');
     }
 
 //#endregion UI CONTROLS
