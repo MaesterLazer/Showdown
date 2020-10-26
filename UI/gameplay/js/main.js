@@ -17,6 +17,7 @@
     var shootButton = document.getElementById('shoot-button');
     var stealButton = document.getElementById('steal-button');
     var blockButton = document.getElementById('block-button');
+    var restartButton = document.getElementById('restart-button');
 
     var Joy1 = new JoyStick('joyDiv',{
         internalFillColor: 'rgba(24,24,28,0.15)',
@@ -61,6 +62,13 @@
         console.log('blockButton ', ev.type);
     });
 
+    var mcRestart= new Hammer(restartButton);
+
+    mcRestart.on("tap", function(ev) {
+        onRestart();
+        console.log('restartButton ', ev.type);
+    });
+
     function onPan(direction) {
         triggerUE4EventMap('moveEvent', `PanDirection:${direction}`);
     }
@@ -79,6 +87,10 @@
     
     function onBlock() {
         triggerUE4EventBlank('blockEvent');
+    }
+
+    function onRestart() {
+        triggerUE4EventBlank('restartEvent');
     }
 
 //#endregion UI CONTROLS
