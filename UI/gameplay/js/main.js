@@ -19,6 +19,9 @@
     var blockButton = document.getElementById('block-button');
     var restartButton = document.getElementById('restart-button');
 
+    var homeScoreboard = document.getElementById('home-score');
+    var awayScoreboard = document.getElementById('away-score');
+
     var Joy1 = new JoyStick('joyDiv',{
         internalFillColor: 'rgba(24,24,28,0.15)',
         internalStrokeColor: 'rgba(24,24,28,0.15)',
@@ -38,11 +41,14 @@
 
     mcShoot.on("press", function(ev) {
         onShootStart();
+        shootButton.classList.add('transparent');
         console.log('shootbutton ', ev.type);
     });
 
     mcShoot.on("pressup", function(ev) {
         onShootEnd();
+        shootButton.classList.remove('transparent');
+        void shootButton.offsetWidth;
         console.log('shootbutton ', ev.type);
     });
 
@@ -51,6 +57,9 @@
 
     mcSteal.on("tap", function(ev) {
         onSteal();
+        stealButton.classList.remove('blink-2');
+        void stealButton.offsetWidth;
+        stealButton.classList.add('blink-2');
         console.log('stealButton ', ev.type);
     });
 
@@ -59,6 +68,9 @@
 
     mcBlock.on("tap", function(ev) {
         onBlock();
+        blockButton.classList.remove('blink-2');
+        void stealButton.offsetWidth;
+        blockButton.classList.add('blink-2');
         console.log('blockButton ', ev.type);
     });
 
@@ -97,8 +109,21 @@
 
 //#region UE4 EVENTS
     function updateScore(home, away){
+        
+        if(home !== bindings.homeScore){
+            homeScoreboard.classList.remove('heartbeat');
+            void homeScoreboard.offsetWidth;
+            homeScoreboard.classList.add('heartbeat');
+        }
+        else if(away !== bindings.awayScore){
+            awayScoreboard.classList.remove('heartbeat');
+            void awayScoreboard.offsetWidth;
+            awayScoreboard.classList.add('heartbeat');
+        }
+
         bindings.homeScore = home;
         bindings.awayScore = away;
+        
     }
 
     function displayMessage(message){
