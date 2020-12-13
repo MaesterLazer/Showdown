@@ -6,7 +6,7 @@
         homeScore: 0,
         awayScore: 0,
         message: "",
-        weardownBar: 100,
+        weardownBar: 0,
     };
 
     let bindings = $.bindings(gameplay);
@@ -14,32 +14,29 @@
 //#endregion BINDING
 
 //#region WEARDOWNBAR
-function updateBar(){
-    //console.log('bar tick')
+function tickBar(){
     setInterval(()=>{
-        let progress = document.querySelector('#weardown-bar')
-        let updatesPerSecond = 1000 / 30
+        let progress = document.querySelector('#weardown-bar');
+        let updatesPerSecond = 1000 / 30;
 
-        var width = $('#weardown-bar').width();
-        var parentWidth = $('#weardown-bar').offsetParent().width();
+        var width = document.getElementById('weardown-bar').offsetWidth;
+        var parentWidth = document.getElementById('weardown-bar').offsetParent.width;
         var percent = Math.ceil(100*width/parentWidth);
       
         function animator () { 
             if(percent !== bindings.weardownBar){
-                //console.log('bar anim tick');
-                //console.log('vars --> ', percent, ' binding -->', bindings.weardownBar)
-                $(progress).css('width', bindings.weardownBar+'%');
+                 $(progress).css('width', bindings.weardownBar+'%');
             }
         }
       
         setTimeout(() => {
-          animator()
-        }, updatesPerSecond)
+          animator();
+        }, updatesPerSecond);
 
-    }, 1000)
+    }, 1000);
 }
 
-updateBar()
+tickBar();
 //#endregion
 
 //#region UI CONTROLS 
@@ -101,6 +98,7 @@ updateBar()
         blockButton.classList.remove('blink-2');
         void stealButton.offsetWidth;
         blockButton.classList.add('blink-2');
+        updateBar( bindings.weardownBar + 5);
         //console.log('blockButton ', ev.type);
     });
 
@@ -158,6 +156,10 @@ updateBar()
 
     function displayMessage(message){
         bindings.message = message;
+    }
+
+    function updateBar(value){
+        bindings.weardownBar = value;
     }
 
     function clearMessage(){

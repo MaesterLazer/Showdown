@@ -279,7 +279,7 @@ html, body {margin: 0; height: 100%; overflow: hidden; background-color: transpa
     position: absolute;
     z-index: 1;
     top: -2vh;
-    left: -13vw;
+    left: -9.5vw;
 }
 
 .progress {
