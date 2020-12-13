@@ -6,7 +6,7 @@
         homeScore: 0,
         awayScore: 0,
         message: "",
-        weardownBar: 80,
+        weardownBar: 100,
     };
 
     let bindings = $.bindings(gameplay);
@@ -15,14 +15,21 @@
 
 //#region WEARDOWNBAR
 function updateBar(){
-    setTimeout(()=>{
+    //console.log('bar tick')
+    setInterval(()=>{
         let progress = document.querySelector('#weardown-bar')
-        let interval = 1
         let updatesPerSecond = 1000 / 30
-        let end = progress.max * 0.8
+
+        var width = $('#weardown-bar').width();
+        var parentWidth = $('#weardown-bar').offsetParent().width();
+        var percent = Math.ceil(100*width/parentWidth);
       
-        function animator () {
-            $(progress).css('width', bindings.weardownBar+'%');
+        function animator () { 
+            if(percent !== bindings.weardownBar){
+                //console.log('bar anim tick');
+                //console.log('vars --> ', percent, ' binding -->', bindings.weardownBar)
+                $(progress).css('width', bindings.weardownBar+'%');
+            }
         }
       
         setTimeout(() => {
