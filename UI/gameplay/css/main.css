@@ -257,3 +257,31 @@ html, body {margin: 0; height: 100%; overflow: hidden; background-color: transpa
 .transparent {
     opacity: 0.2;
 }
+
+#weardown-container {
+    width: 45vw;
+    left: 20vw;
+    position: absolute;
+    top: 1.5vh;
+}
+
+#weardown-bar {
+    background-color: #D4995F !important;
+}
+
+#weardown-text {
+    position: absolute;
+    top: 2.25vh;
+    left: 1vw;
+}
+
+#weardown-label {
+    position: absolute;
+    z-index: 1;
+    top: -2vh;
+}
+
+.progress {
+    height: 1.5rem;
+    border-radius: .5rem;
+}
