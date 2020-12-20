@@ -12,6 +12,7 @@ void AShowdownGameState::BeginPlay() {
 	possession = E_CurrentPossession::None;
 	scoreAway = 0;
 	scoreHome = 0;
+	weardownBarPercentage = 100;
 
 	if (GameMode != nullptr) {
 		UE_LOG(CUSTOM_GameState, Warning, TEXT("gamemode ref set via C++"));
@@ -109,7 +110,16 @@ void AShowdownGameState::UpdateScore() {
 	}
 	else if (possession == E_CurrentPossession::Home) {
 		this->scoreHome = this->scoreHome + 1;
+		this->weardownBarPercentage = this->weardownBarPercentage - 10;
 	}
+
+	return;
+}
+
+void AShowdownGameState::UpdateBarPercentage(int32 newBarPercentage) {
+	UE_LOG(CUSTOM_GameState, Warning, TEXT("bar update call"));
+
+	this->weardownBarPercentage = newBarPercentage;
 
 	return;
 }

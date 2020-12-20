@@ -112,6 +112,12 @@ class SHOWDOWN_API AShowdownGameState : public AGameStateBase, public IShowdownI
 			int32 scoreAway;
 
 		/**
+		 * Current value for the weardown bar (in %)
+		 */
+		UPROPERTY(BlueprintReadOnly, Category = "Showdown | State")
+			int32 weardownBarPercentage;
+
+		/**
 		 * Current possession state
 		 */
 		UPROPERTY(BlueprintReadOnly, Category = "Showdown | State")
@@ -140,6 +146,14 @@ class SHOWDOWN_API AShowdownGameState : public AGameStateBase, public IShowdownI
 		*/
 		UFUNCTION(BlueprintCallable, Category = "Showdown | Helpers")
 			void UpdateScore();
+
+		/**
+		* Call this function to update the weardown bar
+		*
+		* @param newBarPercentage
+		*/
+		UFUNCTION(BlueprintCallable, Category = "Showdown | Helpers")
+			void UpdateBarPercentage(int32 newBarPercentage);
 
 
 // #region SHOWDOWN INTERFACE
