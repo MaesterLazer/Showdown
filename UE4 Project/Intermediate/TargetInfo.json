@@ -2,12 +2,12 @@
 	"Targets": [
 		{
 			"Name": "Showdown",
-			"Path": "G:\\Showdown\\UE4 Project\\Source\\Showdown.Target.cs",
+			"Path": "D:\\Showdown\\UE4 Project\\Source\\Showdown.Target.cs",
 			"Type": "Game"
 		},
 		{
 			"Name": "ShowdownEditor",
-			"Path": "G:\\Showdown\\UE4 Project\\Source\\ShowdownEditor.Target.cs",
+			"Path": "D:\\Showdown\\UE4 Project\\Source\\ShowdownEditor.Target.cs",
 			"Type": "Editor"
 		}
 	]

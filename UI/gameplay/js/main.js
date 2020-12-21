@@ -6,11 +6,38 @@
         homeScore: 0,
         awayScore: 0,
         message: "",
+        weardownBar: 0,
     };
 
     let bindings = $.bindings(gameplay);
 
 //#endregion BINDING
+
+//#region WEARDOWNBAR
+function tickBar(){
+    setInterval(()=>{
+        let progress = document.querySelector('#weardown-bar');
+        let updatesPerSecond = 1000 / 30;
+
+        var width = document.getElementById('weardown-bar').offsetWidth;
+        var parentWidth = document.getElementById('weardown-bar').offsetParent.width;
+        var percent = Math.ceil(100*width/parentWidth);
+      
+        function animator () { 
+            if(percent !== bindings.weardownBar){
+                 $(progress).css('width', bindings.weardownBar+'%');
+            }
+        }
+      
+        setTimeout(() => {
+          animator();
+        }, updatesPerSecond);
+
+    }, 1000);
+}
+
+tickBar();
+//#endregion
 
 //#region UI CONTROLS 
 
@@ -42,14 +69,14 @@
     mcShoot.on("press", function(ev) {
         onShootStart();
         shootButton.classList.add('transparent');
-        console.log('shootbutton ', ev.type);
+        //console.log('shootbutton ', ev.type);
     });
 
     mcShoot.on("pressup", function(ev) {
         onShootEnd();
         shootButton.classList.remove('transparent');
         void shootButton.offsetWidth;
-        console.log('shootbutton ', ev.type);
+        //console.log('shootbutton ', ev.type);
     });
 
     // We create a manager object, which is the same as Hammer(), but without the presetted recognizers. 
@@ -60,7 +87,7 @@
         stealButton.classList.remove('blink-2');
         void stealButton.offsetWidth;
         stealButton.classList.add('blink-2');
-        console.log('stealButton ', ev.type);
+        //console.log('stealButton ', ev.type);
     });
 
     // We create a manager object, which is the same as Hammer(), but without the presetted recognizers. 
@@ -71,14 +98,15 @@
         blockButton.classList.remove('blink-2');
         void stealButton.offsetWidth;
         blockButton.classList.add('blink-2');
-        console.log('blockButton ', ev.type);
+        updateBar( bindings.weardownBar + 5);
+        //console.log('blockButton ', ev.type);
     });
 
     var mcRestart= new Hammer(restartButton);
 
     mcRestart.on("tap", function(ev) {
         onRestart();
-        console.log('restartButton ', ev.type);
+        //console.log('restartButton ', ev.type);
     });
 
     function onPan(direction) {
@@ -128,6 +156,10 @@
 
     function displayMessage(message){
         bindings.message = message;
+    }
+
+    function updateBar(value){
+        bindings.weardownBar = value;
     }
 
     function clearMessage(){
