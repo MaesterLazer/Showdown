@@ -227,7 +227,7 @@ html, body {margin: 0; height: 100%; overflow: hidden; background-color: transpa
 #button-grid {
     align-items: center;
     justify-content: center;
-    margin: 55vh 0 0 68vw;
+    margin: 40vh 0 0 60vw;
 }
 
 #block-button {
@@ -271,14 +271,14 @@ html, body {margin: 0; height: 100%; overflow: hidden; background-color: transpa
 
 #weardown-text {
     position: absolute;
-    top: 1.75vh;
+    top: 4vh;
     left: 1vw;
 }
 
 #weardown-label {
     position: absolute;
     z-index: 1;
-    top: -2vh;
+    top: -4vh;
     left: -9.5vw;
 }
 
