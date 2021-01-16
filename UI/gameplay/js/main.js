@@ -171,7 +171,7 @@ tickBar();
     }
 
     function updateGameClock(value){
-        let str = formatted(value)
+        let str = format(value)
         bindings.gameClock = str;
     }
 
