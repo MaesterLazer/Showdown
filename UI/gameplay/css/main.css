@@ -244,10 +244,10 @@ html, body {margin: 0; height: 100%; overflow: hidden; background-color: transpa
 
 #message-center {
     position: absolute;
-    left: 35vw;
+    left: 30vw;
     top: 17vh;
     text-align: center;
-    font-size: 2em;
+    font-size: 1em;
     z-index: 1;
     color: goldenrod;
 }
@@ -264,7 +264,7 @@ html, body {margin: 0; height: 100%; overflow: hidden; background-color: transpa
     width: 30vh;
     left: -29vw;
     position: absolute;
-    bottom: 81.5vh;
+    bottom: 71.5vh;
 }
 
 #weardown-bar {
