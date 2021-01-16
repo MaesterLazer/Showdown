@@ -6,7 +6,7 @@
         homeScore: 0,
         awayScore: 0,
         message: "",
-        weardownBar: 0,
+        weardownBar: 100,
     };
 
     let bindings = $.bindings(gameplay);
@@ -19,9 +19,9 @@ function tickBar(){
         let progress = document.querySelector('#weardown-bar');
         let updatesPerSecond = 1000 / 30;
 
-        var width = document.getElementById('weardown-bar').offsetWidth;
-        var parentWidth = document.getElementById('weardown-bar').offsetParent.width;
-        var percent = Math.ceil(100*width/parentWidth);
+        var height = document.getElementById('weardown-bar').offsetHeight;
+        var parentHeight = document.getElementById('weardown-bar').offsetParent.height;
+        var percent = Math.ceil(100*height/parentHeight);
       
         function animator () { 
             if(percent !== bindings.weardownBar){
@@ -44,7 +44,6 @@ tickBar();
     var shootButton = document.getElementById('shoot-button');
     var stealButton = document.getElementById('steal-button');
     var blockButton = document.getElementById('block-button');
-    var restartButton = document.getElementById('restart-button');
 
     var homeScoreboard = document.getElementById('home-score');
     var awayScoreboard = document.getElementById('away-score');
@@ -100,13 +99,6 @@ tickBar();
         blockButton.classList.add('blink-2');
         updateBar( bindings.weardownBar + 5);
         //console.log('blockButton ', ev.type);
-    });
-
-    var mcRestart= new Hammer(restartButton);
-
-    mcRestart.on("tap", function(ev) {
-        onRestart();
-        //console.log('restartButton ', ev.type);
     });
 
     function onPan(direction) {
