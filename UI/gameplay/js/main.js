@@ -15,16 +15,14 @@
 
     let bindings = $.bindings(gameplay);
 
-//#endregion BINDING
+//#endregion BINDINGs
 
 function format(time) {   
-    // Hours, minutes and seconds
     var hrs = ~~(time / 3600);
     var mins = ~~((time % 3600) / 60);
     var secs = ~~time % 60;
 
-    // Output like "1:01" or "4:03:59" or "123:03:59"
-    var ret = "";
+  var ret = "";
     if (hrs > 0) {
         ret += "" + hrs + ":" + (mins < 10 ? "0" : "");
     }
@@ -77,7 +75,7 @@ tickBar();
         triggerUE4EventMap('moveEvent', `PanDirection:${dir}`);
         // console.log('move dir', dir)
 
-    }, 30);
+    }, 50);
 
 
     // We create a manager object, which is the same as Hammer(), but without the presetted recognizers. 
@@ -171,7 +169,8 @@ tickBar();
     }
 
     function updateGameClock(value){
-        let str = format(value)
+        let number = new Number(value)
+        let str = format(number)
         bindings.gameClock = str;
     }
 
