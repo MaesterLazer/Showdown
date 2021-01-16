@@ -25,7 +25,7 @@
 		},
 		{
 			"Name": "KantanDocGen",
-			"Enabled": true
+			"Enabled": false
 		},
 		{
 			"Name": "HTMLMenuMain",
