@@ -302,7 +302,6 @@ html, body {margin: 0; height: 100%; overflow: hidden; background-color: transpa
     position: absolute;
     left: 40vw;
     height: 9vh;
-    top: 10vh;
     line-height: .5rem;
     background-color: #f4f5f7;
     text-align: center;
@@ -318,6 +317,15 @@ html, body {margin: 0; height: 100%; overflow: hidden; background-color: transpa
 #game-clock-value {
     position: absolute;
     bottom: -1vh;
-    left: 4vw;
+}
+
+#action-div{
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    height: 61vh;
+    z-index: 1;
+    opacity: 0.15;
+    top: 30vh;
 }
 
