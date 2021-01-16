@@ -1,9 +1,11 @@
 <!--Copyright 2018 - 2019 David Romanski (Socke). All Rights Reserved.-->
-<!doctype html>
-<html lang="us">
+<?xml version="1.0" encoding="UTF-8" ?>
 <head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
 <!-- disable zoom on touchscreens-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<script src="js/moment.min.js"></script>
 <script src="js/jquery.js"></script>
 <script src="js/jquery-bindings.min.js"></script>
 <script src="js/hammer.js"></script>
@@ -13,6 +15,10 @@
     <span class="score-label text-danger" id="away-label"><p>Away</p></span>
     <span class="score-label text-black score-value" id="home-score"><p data-bind="homeScore">0</p></span>
     <span class="score-label text-black score-value" id="away-score"><p data-bind="awayScore">0</p></span>
+    <span class="text-black clock-value" id="game-clock-value"><p id="game-clock-value" data-bind="gameClock">0</p></span>
+</div>
+<div id="clocks" style="margin:0; padding:0;">
+    <span class="text-black clock-value"><p data-bind="shotClock" id="shot-clock-value">0</p><br/><p>SHOT</p></span>
 </div>
 <div id="weardown-container" style="margin:0; padding:0;" >
     <div class="progress">
@@ -24,7 +30,7 @@
 </div>
 </head>
 
-<body style="margin:0;">
+<body style="margin:0; background-color: darkkhaki;">
     <div class="row">
         <div id="joyDiv" style="width:200px;height:200px;margin-bottom:20px; display: nonee;"></div>
             <div class="row" id="message-center">

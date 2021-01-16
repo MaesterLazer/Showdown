@@ -219,7 +219,7 @@ html, body {margin: 0; height: 100%; overflow: hidden; background-color: transpa
     position: absolute;
     background-color: #f4f5f7;
     width: 18vw;
-    height: 14vh;
+    height: 18vh;
     padding: 12px !important;
     left: 82vw;
     border-top-left-radius: 10px;
@@ -245,7 +245,7 @@ html, body {margin: 0; height: 100%; overflow: hidden; background-color: transpa
 #message-center {
     position: absolute;
     left: 30vw;
-    top: 17vh;
+    top: 30vh;
     text-align: center;
     font-size: 1em;
     z-index: 1;
@@ -296,3 +296,28 @@ html, body {margin: 0; height: 100%; overflow: hidden; background-color: transpa
     transform: rotate(-90deg);
     border: 3px solid #f5f5f7!important
 }
+
+
+#clocks {
+    position: absolute;
+    left: 40vw;
+    height: 9vh;
+    top: 10vh;
+    line-height: .5rem;
+    background-color: #f4f5f7;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 20px 8px 8px 8px !important;
+  }
+
+#shot-clock-value {
+    font-size: 1.5rem;
+}
+
+#game-clock-value {
+    position: absolute;
+    bottom: -1vh;
+    left: 4vw;
+}
+

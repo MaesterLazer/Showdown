@@ -46,6 +46,10 @@ void AShowdownGameState::AdvanceShotClock() {
 	if (shotClockCount <= 0){
 		EndShotClock(true);
 	}
+	else {
+		this->OnShotClockAdvance(shotClockCount);
+	}
+
 
 }
 
@@ -57,7 +61,6 @@ void AShowdownGameState::EndShotClock(bool timedOut) {
 	if (timedOut) {
 		EventOnShotClockEnd();
 	}
-
 }
 
 void AShowdownGameState::StartGameClock() {
@@ -87,6 +90,9 @@ void AShowdownGameState::AdvanceGameClock() {
 	//if the timer is done clear and complete the timer with the flag set
 	if (gameClockCount <= 0){
 		EndGameClock(true);
+	}
+	else {
+		this->OnGameClockAdvance(gameClockCount);
 	}
 
 }
@@ -124,6 +130,14 @@ void AShowdownGameState::UpdateBarPercentage(int32 newBarPercentage) {
 	return;
 }
 
+void AShowdownGameState::OnGameClockAdvance_Implementation(int32 timeRemaining){
+	return;
+}
+
+
+void AShowdownGameState::OnShotClockAdvance_Implementation(int32 timeRemaining){
+	return;
+}
 
 void AShowdownGameState::RegisterGameObjects(FGameplayObjects newGameObjects){
 	this->gameObjects = newGameObjects;

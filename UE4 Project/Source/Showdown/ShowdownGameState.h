@@ -154,6 +154,22 @@ class SHOWDOWN_API AShowdownGameState : public AGameStateBase, public IShowdownI
 		*/
 		UFUNCTION(BlueprintCallable, Category = "Showdown | Helpers")
 			void UpdateBarPercentage(int32 newBarPercentage);
+		
+		/**
+		* EventOnGameClockAdvance fires when the game clock advances
+		*
+		*/
+			UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Showdown | Gameplay")
+			void OnGameClockAdvance(int32 timeRemaining);
+				virtual void OnGameClockAdvance_Implementation(int32 timeRemaining);
+
+		/**
+		* EventOnShotClockAdvance fires when the shot clock advances
+		*
+		*/
+		UFUNCTION(BlueprintCallable, BlueprintNativeEvent, Category = "Showdown | Gameplay")
+			void OnShotClockAdvance(int32 timeRemaining);
+				virtual void OnShotClockAdvance_Implementation(int32 timeRemaining);
 
 
 // #region SHOWDOWN INTERFACE

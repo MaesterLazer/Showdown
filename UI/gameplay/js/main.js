@@ -5,6 +5,8 @@
     let gameplay = {
         homeScore: 0,
         awayScore: 0,
+        gameClock: "",
+        shotClock: 0,
         message: "",
         weardownBar: 100,
     };
@@ -44,6 +46,9 @@ tickBar();
     var shootButton = document.getElementById('shoot-button');
     var stealButton = document.getElementById('steal-button');
     var blockButton = document.getElementById('block-button');
+
+    var homeScoreboard = document.getElementById('home-score');
+    var awayScoreboard = document.getElementById('away-score');
 
     var homeScoreboard = document.getElementById('home-score');
     var awayScoreboard = document.getElementById('away-score');
@@ -152,6 +157,16 @@ tickBar();
 
     function updateBar(value){
         bindings.weardownBar = value;
+    }
+    
+    function updateShotClock(value){
+        bindings.shotClock = value;
+    }
+
+    function updateGameClock(value){
+        let formatted = moment.utc(value*1000).format('mm:ss');
+
+        bindings.gameClock = formatted;
     }
 
     function clearMessage(){
