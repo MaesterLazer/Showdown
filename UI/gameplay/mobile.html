@@ -1,7 +1,8 @@
 <!--Copyright 2018 - 2019 David Romanski (Socke). All Rights Reserved.-->
-<!doctype html>
-<html lang="us">
+<?xml version="1.0" encoding="UTF-8" ?>
 <head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
 <!-- disable zoom on touchscreens-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <script src="js/jquery.js"></script>
@@ -9,62 +10,32 @@
 <script src="js/hammer.js"></script>
 <script src="js/HTMLMenuUE4Connector.js"></script>
 <div id="scoreboard" style="margin:0; padding:0;">
-    <span class="score-label text-white" id="home-label"><p>Home</p></span>
-    <span class="score-label text-white" id="away-label"><p>Away</p></span>
+    <span class="score-label text-primary" id="home-label"><p>Home</p></span>
+    <span class="score-label text-danger" id="away-label"><p>Away</p></span>
     <span class="score-label text-black score-value" id="home-score"><p data-bind="homeScore">0</p></span>
     <span class="score-label text-black score-value" id="away-score"><p data-bind="awayScore">0</p></span>
-    <svg id="scoreboard-svg" width="1020" height="505" viewBox="0 0 1020 505" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M1 253V1H741L568 253H1Z" fill="#A40000" stroke="#A40000"/>
-        <path d="M1019 1H736.785L568 253H1019V1Z" fill="#F4F5F7" stroke="#F4F5F7"/>
-        <path d="M1 504V252H741L568 504H1Z" fill="#365194" stroke="#365194"/>
-        <path d="M1019 252H736.785L568 504H1019V252Z" fill="#F4F5F7" stroke="#F4F5F7"/>
-    </svg>    
+    <span class="text-black clock-value" ><p id="game-clock-value" data-bind="gameClock">0</p></span>
+</div>
+<div id="clocks" style="margin:0; padding:0;">
+    <span class="text-black clock-value"><p data-bind="shotClock" id="shot-clock-value">0</p><br/><p>SHOT</p></span>
 </div>
 <div id="weardown-container" style="margin:0; padding:0;" >
     <div class="progress">
         <div id="weardown-bar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
     </div>
     <div id="weardown-label">
-        <span id="weardown-text" class="text-white"><p>BOSS MORALE</p></span>
-        <svg id="weardown-billboard" width="527" height="42" viewBox="0 0 527 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 42V0H163L124.893 42H0Z" fill="#C0C0C0"/>
-        </svg>
+        <span id="weardown-text" class="text-black"><p>BOSS MORALE</p></span>
     </div>
 </div>
 </head>
 
-<body style="margin:0; padding:0">
+<body style="margin:0;">
     <div class="row">
-        <div id="joyDiv" style="width:200px;height:200px;margin-bottom:20px;"></div>
-            <div id="restart-button" class="restart-button">
-                <span>Restart</span>
-            </div>
-            <div class="row" id="message-center">
-                <span><p data-bind="message"></p></span>
-            </div>
-        <div id="button-grid" class="flex-column">
-            <div id="block-button" class="showdown-button">
-                <span style="font-size: 2.5em; color: white">
-                    <i class="far fa-ban"></i>
-                </span>
-            </div>
-            <div id="button-row-1" class="row">
-                <div id="shoot-button" class="showdown-button">
-                    <span style="font-size: 2.5em; color: white">
-                        <i class="far fa-basketball-hoop"></i>
-                    </span>
-                </div>
-                <div id="steal-button" class="showdown-button">
-                    <span style="font-size: 2.5em; color: white">
-                        <i class="fas fa-hand-paper"></i>
-                    </span>
-                </div>
-            </div>
-        </div>    
+        <div id="action-div"></div>
     </div>
 </body>
 <footer>
-    <script src="js/joy.js"></script>
+    <!-- <script src="js/joy.js"></script> -->
     <script src="js/main.js"></script>
     <link href="css/disableSelection.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">

@@ -5,13 +5,31 @@
     let gameplay = {
         homeScore: 0,
         awayScore: 0,
+        gameClock: "00:00",
+        stickDir: "C",
+        bOffense: true,
+        shotClock: 0,
         message: "",
-        weardownBar: 0,
+        weardownBar: 100,
     };
 
     let bindings = $.bindings(gameplay);
 
-//#endregion BINDING
+//#endregion BINDINGs
+
+function format(time) {   
+    var hrs = ~~(time / 3600);
+    var mins = ~~((time % 3600) / 60);
+    var secs = ~~time % 60;
+
+  var ret = "";
+    if (hrs > 0) {
+        ret += "" + hrs + ":" + (mins < 10 ? "0" : "");
+    }
+    ret += "" + mins + ":" + (secs < 10 ? "0" : "");
+    ret += "" + secs;
+    return ret;
+}
 
 //#region WEARDOWNBAR
 function tickBar(){
@@ -19,9 +37,9 @@ function tickBar(){
         let progress = document.querySelector('#weardown-bar');
         let updatesPerSecond = 1000 / 30;
 
-        var width = document.getElementById('weardown-bar').offsetWidth;
-        var parentWidth = document.getElementById('weardown-bar').offsetParent.width;
-        var percent = Math.ceil(100*width/parentWidth);
+        var height = document.getElementById('weardown-bar').offsetHeight;
+        var parentHeight = document.getElementById('weardown-bar').offsetParent.height;
+        var percent = Math.ceil(100*height/parentHeight);
       
         function animator () { 
             if(percent !== bindings.weardownBar){
@@ -41,73 +59,61 @@ tickBar();
 
 //#region UI CONTROLS 
 
-    var shootButton = document.getElementById('shoot-button');
-    var stealButton = document.getElementById('steal-button');
-    var blockButton = document.getElementById('block-button');
-    var restartButton = document.getElementById('restart-button');
+    var homeScoreboard = document.getElementById('home-score');
+    var awayScoreboard = document.getElementById('away-score');
 
     var homeScoreboard = document.getElementById('home-score');
     var awayScoreboard = document.getElementById('away-score');
 
-    var Joy1 = new JoyStick('joyDiv',{
-        internalFillColor: 'rgba(24,24,28,0.15)',
-        internalStrokeColor: 'rgba(24,24,28,0.15)',
-        externalStrokeColor: 'rgba(24,24,28,0.15)'
-    });
+    var actionDiv = document.getElementById('action-div');
+    var joyDiv = document.getElementById('joy-div');
+
 
     setInterval(function(){ 
         
-        let dir = Joy1.GetDir(); 
+        let dir = bindings.stickDir
         triggerUE4EventMap('moveEvent', `PanDirection:${dir}`);
+        // console.log('move dir', dir)
 
     }, 50);
 
 
     // We create a manager object, which is the same as Hammer(), but without the presetted recognizers. 
-    var mcShoot = new Hammer(shootButton);
+    var mcAction= new Hammer(actionDiv);
 
-    mcShoot.on("press", function(ev) {
+    mcAction.on("press", function(ev) {
         onShootStart();
-        shootButton.classList.add('transparent');
-        //console.log('shootbutton ', ev.type);
+        // console.log('actionDiv ', ev.type);
     });
 
-    mcShoot.on("pressup", function(ev) {
+    mcAction.on("pressup", function(ev) {
         onShootEnd();
-        shootButton.classList.remove('transparent');
-        void shootButton.offsetWidth;
-        //console.log('shootbutton ', ev.type);
+        // console.log('actionDiv ', ev.type);
     });
 
-    // We create a manager object, which is the same as Hammer(), but without the presetted recognizers. 
-    var mcSteal= new Hammer(stealButton);
+    mcAction.on("tap", function(ev) {
+        onAction();
+        // console.log('actionDiv ', ev.type);
+    })
 
-    mcSteal.on("tap", function(ev) {
-        onSteal();
-        stealButton.classList.remove('blink-2');
-        void stealButton.offsetWidth;
-        stealButton.classList.add('blink-2');
-        //console.log('stealButton ', ev.type);
-    });
-
-    // We create a manager object, which is the same as Hammer(), but without the presetted recognizers. 
-    var mcBlock= new Hammer(blockButton);
-
-    mcBlock.on("tap", function(ev) {
-        onBlock();
-        blockButton.classList.remove('blink-2');
-        void stealButton.offsetWidth;
-        blockButton.classList.add('blink-2');
-        updateBar( bindings.weardownBar + 5);
-        //console.log('blockButton ', ev.type);
-    });
-
-    var mcRestart= new Hammer(restartButton);
-
-    mcRestart.on("tap", function(ev) {
-        onRestart();
-        //console.log('restartButton ', ev.type);
-    });
+    mcAction.on("panend panup pandown", function(ev) {
+        switch(ev.type){
+            case "panend":
+                bindings.stickDir = "C";
+                break;
+            
+            case "panup":
+                bindings.stickDir = "N";
+                break;
+            
+            case "pandown":
+                bindings.stickDir = "S";
+                break;
+            default:
+                break;
+        }
+        // console.log('joystick ', ev.type);
+    })
 
     function onPan(direction) {
         triggerUE4EventMap('moveEvent', `PanDirection:${direction}`);
@@ -121,12 +127,8 @@ tickBar();
         triggerUE4EventMap('shootEndEvent');
     }
 
-    function onSteal() {
-        triggerUE4EventBlank('stealEvent');
-    }
-    
-    function onBlock() {
-        triggerUE4EventBlank('blockEvent');
+    function onAction() {
+        triggerUE4EventBlank('actionEvent');
     }
 
     function onRestart() {
@@ -160,6 +162,16 @@ tickBar();
 
     function updateBar(value){
         bindings.weardownBar = value;
+    }
+    
+    function updateShotClock(value){
+        bindings.shotClock = value;
+    }
+
+    function updateGameClock(value){
+        let number = new Number(value)
+        let str = format(number)
+        bindings.gameClock = str;
     }
 
     function clearMessage(){

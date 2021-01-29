@@ -195,33 +195,35 @@ html, body {margin: 0; height: 100%; overflow: hidden; background-color: transpa
     position: absolute;
 }
 
-#scoreboard-svg {
-    position: absolute;
-    height: auto;
-    z-index: 2;
-    left: 72vw;
-    top: 0;
-    width: 18vw;
-}
-
 .score-label {
     z-index: 3;
     top: 1vh;
-    left: 73vw;
-    font-size: 1.5rem;
+    font-size: 1rem;
     position: absolute;
 }
 
 .score-value {
-    left: 86vw;
+    top: 4vh;
+    left: 8vw;
 }
 
-#away-score, #away-label {
-    top: 9vh;
+#away-score {
+    top: 10vh;
+}
+
+#away-label {
+    top: 7vh;
 }
 
 #scoreboard {
     position: absolute;
+    background-color: #f4f5f7;
+    width: 18vw;
+    height: 18vh;
+    padding: 12px !important;
+    left: 82vw;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 #button-grid {
@@ -242,10 +244,10 @@ html, body {margin: 0; height: 100%; overflow: hidden; background-color: transpa
 
 #message-center {
     position: absolute;
-    left: 35vw;
-    top: 17vh;
+    left: 30vw;
+    top: 30vh;
     text-align: center;
-    font-size: 2em;
+    font-size: 1em;
     z-index: 1;
     color: goldenrod;
 }
@@ -259,10 +261,10 @@ html, body {margin: 0; height: 100%; overflow: hidden; background-color: transpa
 }
 
 #weardown-container {
-    width: 30vw;
-    left: 35vw;
+    width: 30vh;
+    left: -29vw;
     position: absolute;
-    top: 1.5vh;
+    bottom: 71.5vh;
 }
 
 #weardown-bar {
@@ -271,18 +273,59 @@ html, body {margin: 0; height: 100%; overflow: hidden; background-color: transpa
 
 #weardown-text {
     position: absolute;
-    top: 4vh;
+    top: 2vh;
     left: 1vw;
+    height: 2.5rem;
+    width: 34vw;
+    border-bottom-right-radius: 10px;
+    padding: 8px;
+    border-top-right-radius: 10px;
+    background-color: #f4f5f7;
 }
 
 #weardown-label {
     position: absolute;
     z-index: 1;
-    top: -4vh;
-    left: -9.5vw;
+    bottom: 45vw;
+    left: 28vw;
 }
 
 .progress {
     height: 1.5rem;
     border-radius: .5rem;
+    transform: rotate(-90deg);
+    border: 3px solid #f5f5f7!important
 }
+
+
+#clocks {
+    position: absolute;
+    left: 40vw;
+    height: 9vh;
+    line-height: .5rem;
+    background-color: #f4f5f7;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 20px 8px 8px 8px !important;
+  }
+
+#shot-clock-value {
+    font-size: 1.5rem;
+}
+
+#game-clock-value {
+    position: absolute;
+    bottom: -1vh;
+}
+
+#action-div{
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    height: 61vh;
+    z-index: 1;
+    opacity: 0.15;
+    top: 30vh;
+}
+
