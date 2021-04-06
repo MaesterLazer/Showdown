@@ -1,13 +1,13 @@
 {
 	"SourceFiles": [
-		"C:\\Users\\aasul\\Documents\\Bball\\Showdown\\UE4 Project\\Source\\Showdown\\Showdown.Build.cs",
-		"C:\\Users\\aasul\\Documents\\Bball\\Showdown\\UE4 Project\\Plugins\\HTMLMenuMain\\Source\\HTMLMenuMain\\HTMLMenuMain.Build.cs",
-		"C:\\Users\\aasul\\Documents\\Bball\\Showdown\\UE4 Project\\Plugins\\KantanDocGen\\Source\\KantanDocGen\\KantanDocGen.Build.cs",
-		"C:\\Users\\aasul\\Documents\\Bball\\Showdown\\UE4 Project\\Plugins\\LowEntryExtStdLib\\Source\\LowEntryExtendedStandardLibraryEditor\\LowEntryExtendedStandardLibraryEditor.Build.cs",
-		"C:\\Users\\aasul\\Documents\\Bball\\Showdown\\UE4 Project\\Plugins\\LowEntryExtStdLib\\Source\\LowEntryExtendedStandardLibrary\\LowEntryExtendedStandardLibrary.Build.cs",
-		"C:\\Users\\aasul\\Documents\\Bball\\Showdown\\UE4 Project\\Plugins\\SVGImporter\\Source\\SVG_Importer_Plugin\\SVG_Importer_Plugin.Build.cs",
-		"C:\\Users\\aasul\\Documents\\Bball\\Showdown\\UE4 Project\\Source\\Showdown.Target.cs",
-		"C:\\Users\\aasul\\Documents\\Bball\\Showdown\\UE4 Project\\Source\\ShowdownEditor.Target.cs"
+		"D:\\showdown\\UE4 Project\\Source\\Showdown\\Showdown.Build.cs",
+		"D:\\showdown\\UE4 Project\\Plugins\\HTMLMenuMain\\Source\\HTMLMenuMain\\HTMLMenuMain.Build.cs",
+		"D:\\showdown\\UE4 Project\\Plugins\\KantanDocGen\\Source\\KantanDocGen\\KantanDocGen.Build.cs",
+		"D:\\showdown\\UE4 Project\\Plugins\\LowEntryExtStdLib\\Source\\LowEntryExtendedStandardLibraryEditor\\LowEntryExtendedStandardLibraryEditor.Build.cs",
+		"D:\\showdown\\UE4 Project\\Plugins\\LowEntryExtStdLib\\Source\\LowEntryExtendedStandardLibrary\\LowEntryExtendedStandardLibrary.Build.cs",
+		"D:\\showdown\\UE4 Project\\Plugins\\SVGImporter\\Source\\SVG_Importer_Plugin\\SVG_Importer_Plugin.Build.cs",
+		"D:\\showdown\\UE4 Project\\Source\\Showdown.Target.cs",
+		"D:\\showdown\\UE4 Project\\Source\\ShowdownEditor.Target.cs"
 	],
 	"EngineVersion": "4.25.4"
 }
