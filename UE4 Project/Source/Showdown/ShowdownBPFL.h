@@ -19,6 +19,23 @@ enum class E_GameplayEvent : uint8 {
 };
 
 /**
+*	Enum to codify Gameplay Event
+*/
+UENUM(BlueprintType)
+enum class E_AnimationState : uint8 {
+	IdleOffense,              // 0
+	IdleDefense,	// 1
+	RunDefense,   // 2
+	RunOffense,        // 3
+	ShootingUp,      // 4 
+	ShootingDown,    // 5
+	BlockUp,       // 6
+	BlockDown,       // 7 
+	Stealing
+};
+
+
+/**
 *	Enum to codify Player States
 */
 UENUM(BlueprintType)
