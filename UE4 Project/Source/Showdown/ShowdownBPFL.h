@@ -130,13 +130,13 @@ struct FGameplayObjects {
 	{}
 
 	UPROPERTY(BlueprintReadWrite, Category = "Showdown Framework | Gameplay")
-		FVector HomeStartPos;
+		FTransform HomeStartPos;
 
 	UPROPERTY(BlueprintReadWrite, Category = "Showdown Framework | Gameplay")
-		FVector AwayStartPos;
+		FTransform AwayStartPos;
 
 	UPROPERTY(BlueprintReadWrite, Category = "Showdown Framework | Gameplay")
-		FVector BallStartPos;
+		FTransform BallStartPos;
 
 	UPROPERTY(BlueprintReadWrite, Category = "Showdown Framework | Gameplay")
 		AActor *Hoop;
