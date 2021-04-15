@@ -28,9 +28,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Showdown Framework | Player")
 		void SetGameStateRef();
 
-	UFUNCTION(BlueprintCallable, Category = "Showdown Framework | Player")
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Showdown Framework | Player")
 		void TakeAction(E_PlayerActions actionToTake);
-
+	    virtual void TakeAction_Implementation(E_PlayerActions actionToTake);
 
 	UFUNCTION(BlueprintCallable, Category = "Showdown Framework | Player")
 		bool hasPossession();

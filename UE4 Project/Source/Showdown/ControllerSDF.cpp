@@ -88,7 +88,7 @@ void AControllerSDF::SetGameStateRef() {
 	}
 }
 
-void AControllerSDF::TakeAction(E_PlayerActions actionToTake) {
+void AControllerSDF::TakeAction_Implementation(E_PlayerActions actionToTake) {
 	if (gameStateRef) {
 		FShowdownPlayerActionData data;
 
@@ -99,6 +99,7 @@ void AControllerSDF::TakeAction(E_PlayerActions actionToTake) {
 
 		gameStateRef->OnActionAttempt(data);
 	}
+	return;
 }
 
 

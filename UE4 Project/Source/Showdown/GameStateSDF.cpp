@@ -15,7 +15,7 @@ void AGameStateSDF::BeginPlay() {
 	GameMode = (AGameModeSDF *)GetWorld()->GetAuthGameMode();
 	scoreAway = 0;
 	scoreHome = 0;
-	possession = E_Team::Home;
+	possession = E_Team::Free;
 	homePlayerTakenAction = false;
 	awayPlayerTakenAction = false;
 
@@ -420,6 +420,7 @@ void AGameStateSDF::OnGameplayEvent_Implementation(E_GameEvent Event) {
 			possession = E_Team::Home;
 			break;
 		case E_Team::Free:
+			possession = E_Team::Home;
 			break;
 		default:
 			break;
