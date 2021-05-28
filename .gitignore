@@ -2,3 +2,11 @@
 UE4 Project/Plugins/Runtime/Substance/Intermediate/
 
 *.key
+
+UE5 Project/Intermediate/
+
+UE5 Project/Binaries/
+
+UE5 Project/Saved/
+
+UE5 Project/Build/
