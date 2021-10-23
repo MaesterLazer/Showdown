@@ -1,0 +1,14 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-HTMLMenuMain.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\Showdown\UE5 Project\Intermediate\Build\Win64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h.obj"
+"D:\Showdown\UE5 Project\Plugins\HTMLMenuMain\Intermediate\Build\Win64\UnrealEditor\Development\HTMLMenuMain\Module.HTMLMenuMain.cpp.obj"
+"D:\Showdown\UE5 Project\Plugins\HTMLMenuMain\Intermediate\Build\Win64\UnrealEditor\Development\HTMLMenuMain\Module.HTMLMenuMain.gen.cpp.obj"
+"D:\Showdown\UE5 Project\Plugins\HTMLMenuMain\Intermediate\Build\Win64\UnrealEditor\Development\HTMLMenuMain\Default.rc2.res"
+/OUT:"D:\Showdown\UE5 Project\Plugins\HTMLMenuMain\Intermediate\Build\Win64\UnrealEditor\Development\HTMLMenuMain\UnrealEditor-HTMLMenuMain.lib"
+/INCLUDE:IMPLEMENT_MODULE_HTMLMenuMain
