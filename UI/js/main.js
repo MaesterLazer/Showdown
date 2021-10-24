@@ -1,13 +1,13 @@
    
 //#region BINDING
-  var score = {
+  var info = {
     "score" : {
-      "home" :  42,
-      "away" : 100
+      "home" : 0,
+      "away" : 0
     },
   };
   
-  bind(score, document.querySelector("#scoreboard"));
+  bind(info, document.querySelector("#scoreboard"));
 
   var bar = 100;
 
@@ -67,25 +67,25 @@ tickBar();
 //#region UE4 EVENTS
     function updateScore(home, away){
         
-        if(home !== game.score.home){
+        if(home !== info.score.home){
             homeScoreboard.classList.remove('heartbeat');
             void homeScoreboard.offsetWidth;
             homeScoreboard.classList.add('heartbeat');
         }
-        else if(away !== game.score.away){
+        else if(away !== info.score.away){
             awayScoreboard.classList.remove('heartbeat');
             void awayScoreboard.offsetWidth;
             awayScoreboard.classList.add('heartbeat');
         }
         
-        let newScore = {
+        let newInfo = {
           "score" : {
             "home" : home,
             "away" : away
           }
         };
 
-        bind(newScore, document.querySelector("#app"));
+        bind(newInfo, document.querySelector("#app"));
         
     }
 
