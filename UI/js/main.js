@@ -9,7 +9,7 @@
   
   bind(info, document.querySelector("#scoreboard"));
 
-  var bar = 100;
+  var bar = 0;
 
 //#endregion BINDINGs
 
