@@ -6,7 +6,7 @@
 	"Plugins": [
 		{
 			"Name": "HTMLMenuMain",
-			"Enabled": true,
+			"Enabled": false,
 			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/17ba193d00e249ca9ec7cfaf52602a76"
 		},
 		{
